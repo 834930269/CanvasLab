@@ -44,7 +44,7 @@ RT,该Repo是一个实验性质的Repo,它**并不涉及前端的大部分知识
 
 目的是建立一个类似于下图风格,最终以动画叙事的方式完成一个个人主页  
 
-![](https://www.25xt.com/uploadfiles/ueditor/upload/image/20191205/1575517296842754.jpg)   
+![S](https://www.25xt.com/uploadfiles/ueditor/upload/image/20191205/1575517296842754.jpg)   
 
 ## 技术解释  
 ### 为什么选择JS?    
