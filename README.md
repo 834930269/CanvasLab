@@ -42,7 +42,7 @@ JS的实现比较直观,而且可以以最小代价部署到Github Page上 目�
 最多的则是Canvas方面的知识  
 
 
-![https://www.25xt.com/uploadfiles/ueditor/upload/image/20191205/1575517296842754.jpg](https://www.25xt.com/uploadfiles/ueditor/upload/image/20191205/1575517296842754.jpg)   
+![http://www.be-sunshine.cn/1575517296842754.jpg](http://www.be-sunshine.cn/1575517296842754.jpg)   
 
 ## 技术解释  
 ### 为什么选择JS?    
