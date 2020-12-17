@@ -17,8 +17,8 @@ export const fillCircle = (
 };
 
 // 绘制实心文字
-type TextAlign = "start" | "left" | "center" | "right" | "end";
-type TextBaseline = "alphabetic" | "hanging" | "top" | "middle" | "bottom";
+export type TextAlign = "start" | "left" | "center" | "right" | "end";
+export type TextBaseline = "alphabetic" | "hanging" | "top" | "middle" | "bottom";
 export const fillText = (
   context: CanvasRenderingContext2D,
   text: string,

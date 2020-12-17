@@ -268,7 +268,6 @@ export class C2DApplication implements EventListenerObject{
      * @param intervalSec
      */
     private _handleTimers(intervalSec:number):void{
-        console.log("定时器");
         if(this.timers.length <= 0) return;
         //遍历timers,查找出enabled为true的timer
         //countdown不断递减,小于等于0时执行一次callback
@@ -360,9 +359,10 @@ export class Canvas2DApplication extends C2DApplication {
       let cv = <HTMLCanvasElement>canvas;
       super(cv);
       this.context2D = this.canvas.getContext('2d');
-      let H = this.canvas.height = window.innerHeight / 4 *3;
-      let W = this.canvas.width = window.innerWidth / 4 * 3;
-
+      //let H = this.canvas.height = window.innerHeight / 4 *3;
+      //let W = this.canvas.width = window.innerWidth / 4 * 3;
+      let H = this.canvas.height = 768;
+      let W = this.canvas.width = 1024;
       if(this.context2D!=null)
         this.context2D.fillStyle = "#53B7F6";
     }

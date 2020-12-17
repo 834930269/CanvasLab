@@ -24,7 +24,7 @@ export class Point{
     }
 
     public equal(other:Point){
-        return other.x==this.x && other.y==this.y;
+        return other.x===this.x && other.y===this.y;
     }
 
     public add(other:Point){
