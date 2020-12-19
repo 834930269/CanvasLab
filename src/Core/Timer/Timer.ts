@@ -1,4 +1,4 @@
-import { MathTools } from './../MathTools';
+import { MathTools } from '../MathTools';
 import { time } from 'console';
 
 export enum EnumTimerState{

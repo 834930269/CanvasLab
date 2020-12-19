@@ -1,4 +1,4 @@
-import { MathTools } from './../MathTools';
+import { MathTools } from '../MathTools';
 
 export interface PointLike{
     x:number,
@@ -8,8 +8,8 @@ export interface PointLike{
 //插值计算中的笛卡尔下的点
 export class Point{
     constructor(x?:number,y?:number){
-        this.x=x || 0;
-        this.y=y || 0;
+        this.x=x || 1;
+        this.y=y || 1;
     }
     public x:number;
     public y:number;
@@ -44,6 +44,20 @@ export class Point{
     public scaleAndAdd(other:Point,scalar:number){
         this.x += other.x*scalar;
         this.y += other.y*scalar;
+    }
+
+    /**
+     * XY不等价数乘
+     * @param scalar 
+     */
+    public scaleXY(scalar:Point){
+        this.x*=scalar.x;
+        this.y*=scalar.y;
+    }
+
+    public scaleXYAndAdd(other:Point,scalar:Point){
+        this.x += other.x*scalar.x;
+        this.y += other.y*scalar.y;
     }
 
     public sub(other: Point){

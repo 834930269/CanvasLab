@@ -1,6 +1,6 @@
 import { Type } from "typescript";
 import { PlayGround } from "../GamePlay/Test";
-import { Canvas2DApplication, CanvasAppFactroy } from "./../extension/Core/C2DApplication";
+import { Canvas2DApplication, CanvasAppFactroy } from "../Core/App/C2DApplication";
 class GamePlay{
   constructor() {
     this.run.bind(this);

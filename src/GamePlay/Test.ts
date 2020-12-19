@@ -1,19 +1,20 @@
-import { TextBaseline } from './../extension/Core/DrawUtils/draw';
-import { MathTools } from './../extension/MathTools';
-import { BezierCurve } from './../extension/Interpolation/BezierCurve';
-import { Canvas2DApplication } from "../extension/Core/C2DApplication";
+import { RectSprite } from './../Core/Sprite/CoreSprite/RectSprite';
+import { TextBaseline } from '../Core/App/DrawUtils/draw';
+import { MathTools } from '../Core/MathTools';
+import { BezierCurve } from '../Core/Interpolation/BezierCurve';
+import { Canvas2DApplication } from "../Core/App/C2DApplication";
 import {
     fillText,
     strokeGrid,
     fillCircle,
     strokeCoord,
     TextAlign,
-} from "../extension/Core/DrawUtils/draw";
+} from "../Core/App/DrawUtils/draw";
 import {
     CanvasKeyBoardEvent,
     CanvasMouseEvent,
-} from "../extension/Core/Shared/Event";
-import { Point } from '../extension/Interpolation/Point';
+} from "../Core/App/Shared/Event";
+import { Point } from '../Core/Interpolation/Point';
 
 export class PlayGround extends Canvas2DApplication {
     constructor(canvas: HTMLCanvasElement) {
@@ -42,6 +43,7 @@ export class PlayGround extends Canvas2DApplication {
             false,
             null
         )
+        this.rectSprite=new RectSprite(50,80);
     }
     private bezier:BezierCurve;
     private point:Point;
@@ -52,6 +54,9 @@ export class PlayGround extends Canvas2DApplication {
     private draw_:boolean;
     private counter:number;
     private Title:string="ちょう　ぶん　とう";
+
+    private rectSprite:RectSprite;
+
 
     protected Render(): void {
         this.drawBackground();
@@ -120,6 +125,8 @@ export class PlayGround extends Canvas2DApplication {
             strokeGrid(c, "#333", 15);
             fillCircle(c,200,200,80,'rgb('+(255*this.progress)+','+(255-255*this.progress)+',100)');
             //strokeCoord(c, 0, 0, c.canvas.width, c.canvas.height)
+
+            this.rectSprite.draw(c);
         }
     }
 
@@ -139,6 +146,10 @@ export class PlayGround extends Canvas2DApplication {
         //[40,40] - [180,120]
         this.point.x = pt.x*800 + 60;
         this.point.y = pt.y*600 + 60;
+
+        let pos:Point = new Point(15,1);
+        pos.scale(this.direction?1:-1);
+        this.rectSprite.transform.position.scaleXYAndAdd(pos,pt);
     }
 
     // 鼠标
